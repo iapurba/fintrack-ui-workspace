@@ -1,0 +1,20 @@
+{
+  "name": "@fintrack/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint configuration for FinTrack monorepo",
+  "main": "index.js",
+  "private": true,
+  "peerDependencies": {
+    "eslint": "^9.35.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "fintrack"
+  ],
+  "license": "UNLICENSED"
+}
