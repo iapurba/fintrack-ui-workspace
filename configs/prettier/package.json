@@ -1,0 +1,9 @@
+{
+  "name": "@fintrack/prettier-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "peerDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
