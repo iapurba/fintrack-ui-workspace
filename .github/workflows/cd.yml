@@ -1,0 +1,48 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - main # runs only after merge to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Build all apps
+        run: pnpm -r build
+
+      # # Run e2e tests before deploy (Playwright/Cypress)
+      # - name: E2E tests
+      #   run: pnpm test:e2e
+
+      # # Example: Dockerize frontend app (if you deploy via container)
+      # - name: Build Docker image
+      #   run: docker build -t ghcr.io/${{ github.repository }}/core-shell:latest ./apps/core-shell
+
+      # - name: Push Docker image
+      #   run: |
+      #     echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      #     docker push ghcr.io/${{ github.repository }}/core-shell:latest
+
+      # # Example deploy script (can be AWS CLI, kubectl, Vercel CLI, Netlify, etc.)
+      # - name: Deploy to staging
+      #   run: ./scripts/deploy.sh
