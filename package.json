@@ -5,6 +5,8 @@
     "dev": "pnpm -r parallel dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
+    "lint": "pnpm --filter ...[origin/main] lint",
+    "typecheck": "pnpm -r typecheck",
     "prepare": "husky"
   },
   "devDependencies": {

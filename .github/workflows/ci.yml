@@ -41,7 +41,7 @@ jobs:
 
       # 7. Run tests with coverage
       - name: test
-        run: pnpm test --coverage
+        run: pnpm test -- --coverage
 
       # 8. Build (if applicable)
       - name: build
