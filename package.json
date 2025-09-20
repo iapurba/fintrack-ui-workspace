@@ -5,6 +5,7 @@
     "dev": "pnpm -r parallel dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
+    "test:coverage": "pnpm -r test -- --coverage",
     "lint": "pnpm --r lint",
     "typecheck": "pnpm -r typecheck",
     "prepare": "husky"
