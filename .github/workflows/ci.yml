@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration
 
 on:
   pull_request:
@@ -13,6 +13,8 @@ jobs:
       # 1. Checkout repo
       - name: checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # fetch all history for git diff
 
       # 2. Setup pnpm
       - name: setup pnpm
@@ -32,19 +34,19 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       # 5. Lint only changed files
-      - name: lint
-        run: pnpm lint
+      - name: lint only changed files
+        run: pnpm --filter ...[origin/main] lint
 
       # 6. Typecheck (if TS)
       - name: typecheck
         run: pnpm typecheck
 
       # 7. Run tests with coverage
-      - name: test
+      - name: test with coverage
         run: pnpm test -- --coverage
 
       # 8. Build (if applicable)
-      - name: build
+      - name: build all apps
         run: pnpm -r build
 
         # 9. Security audit
