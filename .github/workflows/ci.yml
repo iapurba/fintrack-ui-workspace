@@ -1,0 +1,54 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # fetch all history for git diff
+
+      # 2. Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      # 3. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      # 4. Install dependencies (fast + cache aware)
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # 5. Lint only changed files
+      - name: Lint only changed files
+        run: pnpm --filter ...[origin/main] lint
+
+      # 6. Typecheck (if TS)
+      - name: Typecheck
+        run: pnpm typecheck
+
+      # 7. Run tests with coverage
+      - name: Test with coverage
+        run: pnpm --filter ...[origin/main] test:coverage
+
+      # 8. Build (if applicable)
+      - name: Build changed apps/packages
+        run: pnpm --filter ...[origin/main] build
+
+        # 9. Security audit
+      - name: Security audit
+        run: pnpm audit --audit-level=moderate
