@@ -1,0 +1,37 @@
+{
+  "name": "@fintrack/webpack-config",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "description": "Shared webpack configuration for Fintrack monorepo",
+  "private": true,
+  "main": "index.ts",
+  "dependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "dotenv-webpack": "^8.1.1",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "sass": "^1.93.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "tsconfig-paths-webpack-plugin": "^4.2.0",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "peerDependencies": {
+    "webpack": "^5.101.3"
+  },
+  "devDependencies": {
+    "@types/dotenv-webpack": "^7.0.8",
+    "@types/mini-css-extract-plugin": "^2.5.1",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.2"
+  }
+}
