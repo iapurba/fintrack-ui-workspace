@@ -1,5 +1,5 @@
 // This is the central Prettier configuration, written in ES Module syntax.
-export default {
+const config = {
   semi: true,
   singleQuote: false,
   tabWidth: 2,
@@ -8,3 +8,5 @@ export default {
   jsxSingleQuote: false,
   bracketSpacing: true,
 };
+
+export default config;

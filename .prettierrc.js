@@ -1,1 +1,3 @@
-module.exports = require("@fintrack/prettier-config");
+import prettierConfig from "@fintrack/prettier-config";
+
+export default prettierConfig;

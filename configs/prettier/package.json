@@ -1,9 +1,20 @@
 {
   "name": "@fintrack/prettier-config",
   "version": "1.0.0",
-  "main": "index.js",
   "private": true,
+  "license": "UNLICENSED",
+  "description": "Shared Prettier configuration for the Fintrack monorepo.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "devDependencies": {
+    "@types/prettier": "^3.0.0",
+    "prettier": "^3.3.2"
+  },
   "peerDependencies": {
-    "prettier": "^3.6.2"
+    "prettier": ">=3.0.0"
   }
 }
