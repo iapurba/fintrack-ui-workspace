@@ -5,6 +5,7 @@ import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import prettierConfig from "eslint-config-prettier";
+import globals from "globals";
 
 /**
  * This is the shared ESLint configuration.
@@ -33,6 +34,10 @@ export default [
           jsx: true,
         },
       },
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
 
     // Settings can be shared across all rules
@@ -53,10 +58,10 @@ export default [
   {
     rules: {
       "react/react-in-jsx-scope": "off", // Not needed with new JSX transform
-      "@typescript-eslint/no-unused-vars": "warn",
-      semi: ["error", "always"],
-      quotes: ["error", "double"],
-      indent: ["error", 2],
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
 
