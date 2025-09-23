@@ -7,3 +7,4 @@
 export * from "./webpack.common";
 export * from "./webpack.dev";
 export * from "./webpack.prod";
+export * from "./webpack.federation";

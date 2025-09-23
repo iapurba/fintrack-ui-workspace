@@ -1,0 +1,14 @@
+{
+  "extends": "@fintrack/tsconfig/node.json",
+
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
+  },
+  // This config should apply to all TS files within this package
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
