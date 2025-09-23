@@ -1,0 +1,13 @@
+{
+  "name": "@fintrack/tsconfig",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "base.json",
+  "files": [
+    "base.json",
+    "react.json",
+    "node.json",
+    "app.json"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "checkJs": true,
+    "allowJs": true,
+    "noEmit": false,
+    "isolatedModules": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["ESNext"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fintrack/*": ["./packages/*", "./configs/*"]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "files": [], // This root config doesn't include any files directly
+  "references": [
+    // --- Apps
+    { "path": "./apps/core-shell" },
+    // { "path": "./apps/mfe-analytics" },
+    // { "path": "./apps/mfe-finance" },
+    // { "path": "./apps/mfe-user" },
+
+    // --- Config Packages
+    { "path": "./configs/webpack" },
+
+    // --- Shared Packages
+    { "path": "./packages/design-system" },
+    { "path": "./packages/service-consumer" }
+    // { "path": "./packages/utils" },
+  ]
+}
