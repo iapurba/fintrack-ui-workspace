@@ -33,6 +33,11 @@
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
   },
+  "pnpm": {
+    "overrides": {
+      "typescript": "^5.9.2"
+    }
+  },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,md,html,css,yml}": "prettier --write --ignore-unknown",
     "**/*.{ts,tsx,js,jsx}": "eslint --fix"
