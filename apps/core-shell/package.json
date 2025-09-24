@@ -1,0 +1,34 @@
+{
+  "name": "core-shell",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The main shell application that hosts and orchestrates all micro-frontends.",
+  "author": {
+    "name": "Fintrack Dev Team",
+    "email": "dev@fintrack.com"
+  },
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@fintrack/eslint-config": "workspace:*",
+    "@fintrack/prettier-config": "workspace:*",
+    "@fintrack/tsconfig": "workspace:*",
+    "@fintrack/webpack-config": "workspace:*",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "*",
+    "prettier": "*",
+    "typescript": "*",
+    "typescript-eslint": "*",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*"
+  }
+}
