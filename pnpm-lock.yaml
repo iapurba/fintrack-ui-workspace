@@ -82,25 +82,25 @@ importers:
         specifier: ^19.1.9
         version: 19.1.9(@types/react@19.1.13)
       eslint:
-        specifier: ^9.36.0
+        specifier: '*'
         version: 9.36.0(jiti@2.5.1)
       prettier:
-        specifier: ^3.6.2
+        specifier: '*'
         version: 3.6.2
       typescript:
         specifier: ^5.9.2
         version: 5.9.2
       typescript-eslint:
-        specifier: ^8.44.1
+        specifier: '*'
         version: 8.44.1(eslint@9.36.0(jiti@2.5.1))(typescript@5.9.2)
       webpack:
-        specifier: ^5.101.3
+        specifier: '*'
         version: 5.101.3(webpack-cli@6.0.1)
       webpack-cli:
-        specifier: ^6.0.1
+        specifier: '*'
         version: 6.0.1(webpack-dev-server@5.2.2)(webpack@5.101.3)
       webpack-dev-server:
-        specifier: ^5.2.2
+        specifier: '*'
         version: 5.2.2(webpack-cli@6.0.1)(webpack@5.101.3)
 
   configs/eslint:
