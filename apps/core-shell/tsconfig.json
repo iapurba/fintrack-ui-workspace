@@ -1,0 +1,9 @@
+{
+  "extends": "@fintrack/tsconfig/app.json",
+  "compilerOptions": {
+    "baseUrl": "../../",
+    "paths": {
+      "@fintrack/*": ["apps/*", "packages/*", "configs/*"]
+    }
+  }
+}
