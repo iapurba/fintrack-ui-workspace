@@ -7,6 +7,7 @@ import path from "path";
 
 export const createProdConfig = (options: {
   context: string;
+  publicPath?: string;
 }): Configuration => {
   return {
     mode: "production",
@@ -16,7 +17,7 @@ export const createProdConfig = (options: {
       // Use contenthash for long-term caching
       filename: "js/[name].[contenthash].js",
       chunkFilename: "js/[name].[contenthash].chunk.js",
-      publicPath: "auto", // Important for Module Federation
+      publicPath: options.publicPath || "auto", // Important for Module Federation
     },
 
     module: {

@@ -10,29 +10,36 @@ import packageJson from "./package.json";
 
 const PORT = 3000;
 
-export default (
+const generateWebpackConfig = (
   env: { [key: string]: string },
   argv: { mode: "development" | "production" },
 ): Configuration => {
-  const isProduction = argv.mode === "production";
+  const context = __dirname;
 
-  const commonConfig = createCommonConfig({ context: __dirname });
-
-  const envConfig = isProduction
-    ? createProdConfig({ context: __dirname })
-    : createDevConfig({
-        context: __dirname,
-        port: PORT,
-        host: "localhost",
-      });
-
-  const federationPlugin = createModuleFederationConfig({
+  const federationConfig = createModuleFederationConfig({
     name: "core-shell",
     dependencies: packageJson.dependencies,
   });
 
-  const mergedConfig = merge(commonConfig, envConfig);
-  mergedConfig.plugins?.push(federationPlugin);
+  const commonConfig = createCommonConfig({ context });
 
-  return mergedConfig;
+  const devConfig = createDevConfig({
+    context,
+    port: PORT,
+    host: "localhost",
+  });
+
+  const prodConfig = createProdConfig({ context });
+
+  if (argv.mode === "development") {
+    return merge(commonConfig, devConfig, {
+      plugins: [federationConfig],
+    });
+  }
+
+  return merge(commonConfig, prodConfig, {
+    plugins: [federationConfig],
+  });
 };
+
+export default generateWebpackConfig;
