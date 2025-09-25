@@ -1,17 +1,17 @@
-import { Configuration } from "webpack";
-import { merge } from "webpack-merge";
-import {
+type Configuration = import("webpack").Configuration;
+const { merge } = require("webpack-merge");
+const {
   createCommonConfig,
   createDevConfig,
   createProdConfig,
   createModuleFederationConfig,
-} from "@fintrack/webpack-config";
-import packageJson from "./package.json";
+} = require("@fintrack/webpack-config");
+const packageJson = require("./package.json");
 
 const PORT = 3000;
 
 const generateWebpackConfig = (
-  env: { [key: string]: string },
+  _env: unknown,
   argv: { mode: "development" | "production" },
 ): Configuration => {
   const context = __dirname;
@@ -42,4 +42,4 @@ const generateWebpackConfig = (
   });
 };
 
-export default generateWebpackConfig;
+module.exports = generateWebpackConfig;
