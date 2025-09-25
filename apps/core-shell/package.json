@@ -1,5 +1,5 @@
 {
-  "name": "core-shell",
+  "name": "@fintrack/core-shell",
   "version": "1.0.0",
   "private": true,
   "description": "The main shell application that hosts and orchestrates all micro-frontends.",
