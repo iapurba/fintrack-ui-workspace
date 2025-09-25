@@ -3,9 +3,9 @@
   "references": [
     // --- Apps
     { "path": "./apps/core-shell" },
-    // { "path": "./apps/mfe-analytics" },
-    // { "path": "./apps/mfe-finance" },
     { "path": "./apps/mfe-user" },
+    { "path": "./apps/mfe-finance" },
+    // { "path": "./apps/mfe-analytics" },
 
     // --- Config Packages
     { "path": "./configs/webpack" }
