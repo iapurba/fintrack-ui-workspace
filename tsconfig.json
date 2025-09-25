@@ -5,7 +5,7 @@
     { "path": "./apps/core-shell" },
     // { "path": "./apps/mfe-analytics" },
     // { "path": "./apps/mfe-finance" },
-    // { "path": "./apps/mfe-user" },
+    { "path": "./apps/mfe-user" },
 
     // --- Config Packages
     { "path": "./configs/webpack" }
