@@ -1,9 +1,9 @@
-import { Configuration } from "webpack";
 import "webpack-dev-server"; // Module augmentation for webpack-dev-server
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import path from "path";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+type Configuration = import("webpack").Configuration;
 
-export const createDevConfig = (options: {
+const createDevConfig = (options: {
   context: string;
   port: number;
   host: string;
@@ -11,6 +11,10 @@ export const createDevConfig = (options: {
   return {
     mode: "development",
     devtool: "eval-source-map",
+
+    performance: {
+      hints: false, // Turn off performance hints in development
+    },
 
     devServer: {
       port: options.port,
@@ -32,3 +36,5 @@ export const createDevConfig = (options: {
     ],
   };
 };
+
+export = { createDevConfig };

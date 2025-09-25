@@ -4,11 +4,13 @@
   "compilerOptions": {
     "composite": true,
     "outDir": "dist",
+    "rootDir": "src",
+    "module": "CommonJS",
+    "esModuleInterop": true, // Ensures compatibility between CJS and ESM
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true
   },
-  // This config should apply to all TS files within this package
-  "include": ["**/*.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

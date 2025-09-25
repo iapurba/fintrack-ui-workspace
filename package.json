@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm -r parallel dev",
+    "dev:container": "pnpm --filter core-shell dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:coverage": "pnpm -r test -- --coverage",

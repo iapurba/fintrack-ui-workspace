@@ -1,11 +1,11 @@
-import { Configuration } from "webpack";
-import MiniCSSExtractPlugin from "mini-css-extract-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import TerserPlugin from "terser-webpack-plugin";
-import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
-import path from "path";
+type Configuration = import("webpack").Configuration;
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require("path");
 
-export const createProdConfig = (options: {
+const createProdConfig = (options: {
   context: string;
   publicPath?: string;
 }): Configuration => {
@@ -84,3 +84,5 @@ export const createProdConfig = (options: {
     },
   };
 };
+
+export = { createProdConfig };
