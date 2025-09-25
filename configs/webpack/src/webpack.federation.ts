@@ -1,4 +1,4 @@
-import { container } from "webpack";
+const { container } = require("webpack");
 
 interface FederationConfigOptions {
   name: string;
@@ -9,9 +9,7 @@ interface FederationConfigOptions {
   shared?: Record<string, { singleton: boolean; requiredVersion: string }>;
 }
 
-export const createModuleFederationConfig = (
-  options: FederationConfigOptions,
-) => {
+const createModuleFederationConfig = (options: FederationConfigOptions) => {
   const {
     name,
     dependencies,
@@ -40,3 +38,5 @@ export const createModuleFederationConfig = (
     },
   });
 };
+
+export = { createModuleFederationConfig };

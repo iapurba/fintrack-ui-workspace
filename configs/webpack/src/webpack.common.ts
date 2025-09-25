@@ -1,11 +1,9 @@
-import path from "path";
-import { Configuration, DefinePlugin } from "webpack";
-import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin";
-import Dotenv from "dotenv-webpack";
+type Configuration = import("webpack").Configuration;
+const path = require("path");
+const { TsconfigPathsPlugin } = require("tsconfig-paths-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
-export const createCommonConfig = (options: {
-  context: string;
-}): Configuration => {
+const createCommonConfig = (options: { context: string }): Configuration => {
   return {
     entry: path.resolve(options.context, "src", "index.tsx"),
     output: {
@@ -67,9 +65,11 @@ export const createCommonConfig = (options: {
         systemvars: true, // Allow system environment variables to be used
       }),
       // Define global constants
-      new DefinePlugin({
-        "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-      }),
+      // new DefinePlugin({
+      //   "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+      // }),
     ],
   };
 };
+
+export = { createCommonConfig };

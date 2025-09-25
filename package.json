@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm -r parallel dev",
+    "dev:container": "pnpm --filter core-shell dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "test:coverage": "pnpm -r test -- --coverage",
@@ -14,14 +15,8 @@
   "devDependencies": {
     "@fintrack/eslint-config": "workspace:*",
     "@fintrack/prettier-config": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "^8.44.0",
-    "@typescript-eslint/parser": "^8.44.0",
     "@types/node": "^20.14.2",
     "eslint": "^9.36.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-define-config": "^2.1.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
     "husky": "^9.1.7",
     "jest": "^30.1.3",
     "lint-staged": "^16.1.6",
@@ -32,6 +27,11 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2",
     "webpack-merge": "^6.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "typescript": "^5.9.2"
+    }
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,md,html,css,yml}": "prettier --write --ignore-unknown",

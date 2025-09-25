@@ -8,11 +8,11 @@
     // { "path": "./apps/mfe-user" },
 
     // --- Config Packages
-    { "path": "./configs/webpack" },
+    { "path": "./configs/webpack" }
 
     // --- Shared Packages
-    { "path": "./packages/design-system" },
-    { "path": "./packages/service-consumer" }
+    // { "path": "./packages/design-system" },
+    // { "path": "./packages/service-consumer" }
     // { "path": "./packages/utils" },
   ]
 }

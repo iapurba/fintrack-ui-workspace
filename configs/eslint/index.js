@@ -65,7 +65,18 @@ export default [
     },
   },
 
-  // 4. Prettier configuration
+  // 4. Override for configuration files
+  {
+    files: [
+      "**/*.config.{js,cjs,mjs,ts,cts,mts}",
+      "**/configs/webpack/src/**/*.ts",
+    ],
+    rules: {
+      "@typescript-eslint/no-var-requires": "off",
+    },
+  },
+
+  // 5. Prettier configuration
   // IMPORTANT: This MUST be the last item in the array.
   // It disables any stylistic rules that might conflict with Prettier's formatting.
   prettierConfig,
