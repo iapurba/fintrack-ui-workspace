@@ -1,8 +1,8 @@
 {
-  "name": "@fintrack/core-shell",
+  "name": "@fintrack/mfe-finance",
   "version": "1.0.0",
   "private": true,
-  "description": "The main shell application that hosts and orchestrates all micro-frontends.",
+  "description": "The Fintrack finance micro-frontend application.",
   "author": {
     "name": "Fintrack Dev Team",
     "email": "dev@fintrack.com"

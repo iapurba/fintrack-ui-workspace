@@ -1,0 +1,15 @@
+{
+  "extends": "@fintrack/tsconfig/react.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "declaration": true,
+    "baseUrl": "../../",
+    "paths": {
+      "@fintrack/*": ["apps/*", "packages/*", "configs/*"]
+    },
+    "checkJs": false
+  },
+  "include": ["src", "webpack.config.ts", "package.json"],
+  "exclude": ["node_modules", "dist"]
+}
